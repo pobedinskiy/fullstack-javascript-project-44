@@ -1,4 +1,4 @@
 #!/usr/bin/env node
-import answerFunc from '../src/even.js';
+import even from '../src/even.js';
 
-answerFunc();
+even();
