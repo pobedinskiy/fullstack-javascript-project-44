@@ -1,4 +1,4 @@
-import * as index from './index.js';
+import * as index from '../index.js';
 
 const calc = () => {
   const name = index.welcomeMessage();
@@ -26,8 +26,8 @@ const calc = () => {
         break;
     }
     console.log(`Question: ${a} ${sign} ${b}`);
-    const answer = Number(index.getAnswer());
-    if (answer === result) {
+    const answer = index.getAnswer();
+    if (Number(answer) === result) {
       console.log('Correct!');
       if (j < 2) {
         j += 1;

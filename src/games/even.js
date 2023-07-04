@@ -1,4 +1,4 @@
-import * as index from './index.js';
+import * as index from '../index.js';
 
 const even = () => {
   const name = index.welcomeMessage();
