@@ -1,31 +1,22 @@
-import * as index from '../index.js';
+import readlineSync from 'readline-sync';
+import engine from '../index.js';
+import getRandom from '../random.js';
 
 const even = () => {
-  const name = index.welcomeMessage();
-  console.log('Answer "yes" if the number is even, otherwise answer "no"');
-  let i = 0;
-  const n = 101;
-  while (i < 3) {
+  const evenGameInfo = 'Answer "yes" if the number is even, otherwise answer "no"';
+  const evenAim = () => {
     let ans = 'yes';
-    const number = index.getRandom(n);
+    const n = 101;
+    const number = getRandom(n);
     if (number % 2 !== 0) {
       ans = 'no';
     }
     console.log(`Question: ${number}`);
-    const answer = index.getAnswer();
-    if (answer === ans) {
-      index.correctMessage();
-      if (i < 2) {
-        i += 1;
-      } else {
-        index.successMessage(name);
-        break;
-      }
-    } else {
-      index.failureMessage(answer, ans, name);
-      break;
-    }
-  }
+    const answer = readlineSync.question('Your answer: ');
+    const list = [answer, ans];
+    return list;
+  };
+  engine(evenGameInfo, evenAim);
 };
 
 export default even;
