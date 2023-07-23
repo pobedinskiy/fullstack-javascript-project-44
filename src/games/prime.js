@@ -17,7 +17,6 @@ const prime = () => {
     };
     const number = getRandomInRange();
     const result = isPrime(number);
-
     const question = `${number}`;
     const answer = `${result}`;
     return [question, answer];

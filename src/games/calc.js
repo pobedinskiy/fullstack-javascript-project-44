@@ -5,7 +5,7 @@ const calc = () => {
   const calcGameInfo = 'What is the result of the expression?';
   const calcAim = () => {
     const signs = ['-', '+', '*'];
-    const n2 = signs.length;
+    const n2 = signs.length - 1;
     const a = getRandomInRange();
     const b = getRandomInRange();
     const i = getRandomInRange(0, n2);
