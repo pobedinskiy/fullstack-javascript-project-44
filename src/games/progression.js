@@ -1,14 +1,13 @@
-import readlineSync from 'readline-sync';
 import engine from '../index.js';
-import getRandom from '../random.js';
+import getRandomInRange from '../random.js';
 
 const progression = () => {
   const progressionGameInfo = 'What number is missing in the progression?';
   const progressionAim = () => {
-    const progElemCount = getRandom(6) + 5;
-    const startNumber = getRandom(101);
-    const interval = getRandom(11) + 1;
-    const missingNumberIndex = getRandom(progElemCount - 1) + 1;
+    const progElemCount = getRandomInRange(5, 10);
+    const startNumber = getRandomInRange();
+    const interval = getRandomInRange(1, 10);
+    const missingNumberIndex = getRandomInRange(1, progElemCount - 1);
     const array = [];
     array[0] = startNumber;
     for (let i = 0; i < progElemCount; i += 1) {
@@ -19,10 +18,9 @@ const progression = () => {
     const result = array[missingNumberIndex];
     array[missingNumberIndex] = '..';
     const progStr = array.join(' ');
-    console.log(`Question: ${progStr}`);
-    const answer = Number(readlineSync.question('Your answer: '));
-    const list = [answer, result];
-    return list;
+    const question = `${progStr}`;
+    const answer = `${result}`;
+    return [question, answer];
   };
   engine(progressionGameInfo, progressionAim);
 };

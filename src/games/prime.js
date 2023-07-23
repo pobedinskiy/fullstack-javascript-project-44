@@ -1,6 +1,5 @@
-import readlineSync from 'readline-sync';
 import engine from '../index.js';
-import getRandom from '../random.js';
+import getRandomInRange from '../random.js';
 
 const prime = () => {
   const primeGameInfo = 'Answer "yes" if given number is prime. Otherwise answer "no"';
@@ -16,12 +15,12 @@ const prime = () => {
       }
       return 'no';
     };
-    const number = getRandom(101);
+    const number = getRandomInRange();
     const result = isPrime(number);
-    console.log(`Question: ${number}`);
-    const answer = readlineSync.question('Your answer: ');
-    const list = [answer, result];
-    return list;
+
+    const question = `${number}`;
+    const answer = `${result}`;
+    return [question, answer];
   };
   engine(primeGameInfo, primeAim);
 };

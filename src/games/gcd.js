@@ -1,6 +1,5 @@
-import readlineSync from 'readline-sync';
 import engine from '../index.js';
-import getRandom from '../random.js';
+import getRandomInRange from '../random.js';
 
 const nod = (a, b) => {
   if (b !== 0) {
@@ -13,14 +12,12 @@ const nod = (a, b) => {
 const gcd = () => {
   const gcdGameInfo = 'Find the greatest common divisor of given numbers.';
   const gcdAim = () => {
-    const n = 101;
-    const a = getRandom(n);
-    const b = getRandom(n);
+    const a = getRandomInRange();
+    const b = getRandomInRange();
     const result = nod(a, b);
-    console.log(`Question: ${a} ${b}`);
-    const answer = Number(readlineSync.question('Your answer: '));
-    const list = [answer, result];
-    return list;
+    const question = `${a} ${b}`;
+    const answer = `${result}`;
+    return [question, answer];
   };
   engine(gcdGameInfo, gcdAim);
 };
