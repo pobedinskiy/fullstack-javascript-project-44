@@ -1,34 +1,32 @@
-import engine from '../index.js';
-import getRandomInRange from '../random.js';
+import getRandomInRange from '../getRandomInRange.js';
+import runEngine from '../index.js';
 
-const calc = () => {
-  const calcGameInfo = 'What is the result of the expression?';
-  const calcAim = () => {
-    const signs = ['-', '+', '*'];
-    const n2 = signs.length - 1;
-    const a = getRandomInRange();
-    const b = getRandomInRange();
-    const i = getRandomInRange(0, n2);
-    const sign = signs[i];
-    let result = 0;
-    switch (sign) {
-      case '-':
-        result = a - b;
-        break;
-      case '+':
-        result = a + b;
-        break;
-      case '*':
-        result = a * b;
-        break;
-      default:
-        break;
-    }
-    const question = `${a} ${sign} ${b}`;
-    const answer = `${result}`;
-    return [question, answer];
-  };
-  engine(calcGameInfo, calcAim);
+const getRandomOperator = () => {
+  const operators = ['+', '-', '*'];
+  return operators[getRandomInRange(0, operators.length - 1)];
+};
+const calculation = (num1, num2, operator) => {
+  switch (operator) {
+    case '+':
+      return num1 + num2;
+    case '-':
+      return num1 - num2;
+    case '*':
+      return num1 * num2;
+    default:
+      throw new Error(`Invalid operator - ${operator}`);
+  }
+};
+const generateRound = () => {
+  const num1 = getRandomInRange(0, 100);
+  const num2 = getRandomInRange(0, 100);
+  const operator = getRandomOperator();
+  const question = `${num1} ${operator} ${num2}`;
+  const answer = String(calculation(num1, num2, operator));
+  return [question, answer];
 };
 
-export default calc;
+export default () => {
+  const rules = 'What is the result of the expression?';
+  runEngine(rules, generateRound);
+};

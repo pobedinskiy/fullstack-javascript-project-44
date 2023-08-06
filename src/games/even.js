@@ -1,19 +1,22 @@
-import engine from '../index.js';
-import getRandomInRange from '../random.js';
+import getRandomInRange from '../getRandomInRange.js';
+import runEngine from '../index.js';
 
-const even = () => {
-  const evenGameInfo = 'Answer "yes" if the number is even, otherwise answer "no"';
-  const evenAim = () => {
-    let ans = 'yes';
-    const number = getRandomInRange();
-    if (number % 2 !== 0) {
-      ans = 'no';
-    }
-    const question = `${number}`;
-    const answer = ans;
-    return [question, answer];
-  };
-  engine(evenGameInfo, evenAim);
+const calculation = (number) => {
+  let ans = 'yes';
+  if (number % 2 !== 0) {
+    ans = 'no';
+  }
+  return ans;
 };
 
-export default even;
+const generateRound = () => {
+  const number = getRandomInRange(0, 100);
+  const question = `${number}`;
+  const answer = calculation(number);
+  return [question, answer];
+};
+
+export default () => {
+  const rules = 'Answer "yes" if the number is even, otherwise answer "no"';
+  runEngine(rules, generateRound);
+};

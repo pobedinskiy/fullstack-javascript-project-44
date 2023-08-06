@@ -1,27 +1,26 @@
-import engine from '../index.js';
-import getRandomInRange from '../random.js';
+import getRandomInRange from '../getRandomInRange.js';
+import runEngine from '../index.js';
 
-const prime = () => {
-  const primeGameInfo = 'Answer "yes" if given number is prime. Otherwise answer "no"';
-  const primeAim = () => {
-    const isPrime = (number) => {
-      if (number > 1) {
-        for (let i = 2; i < number; i += 1) {
-          if (number % i === 0) {
-            return 'no';
-          }
-        }
-        return 'yes';
+const calculation = (number) => {
+  if (number > 1) {
+    for (let i = 2; i < number; i += 1) {
+      if (number % i === 0) {
+        return 'no';
       }
-      return 'no';
-    };
-    const number = getRandomInRange();
-    const result = isPrime(number);
-    const question = `${number}`;
-    const answer = `${result}`;
-    return [question, answer];
-  };
-  engine(primeGameInfo, primeAim);
+    }
+    return 'yes';
+  }
+  return 'no';
 };
 
-export default prime;
+const generateRound = () => {
+  const number = getRandomInRange(0, 100);
+  const question = `${number}`;
+  const answer = calculation(number);
+  return [question, answer];
+};
+
+export default () => {
+  const rules = 'Answer "yes" if given number is prime. Otherwise answer "no"';
+  runEngine(rules, generateRound);
+};

@@ -1,25 +1,23 @@
-import engine from '../index.js';
-import getRandomInRange from '../random.js';
+import getRandomInRange from '../getRandomInRange.js';
+import runEngine from '../index.js';
 
-const nod = (a, b) => {
+const calculation = (a, b) => {
   if (b !== 0) {
     const c = a % b;
-    return nod(b, c);
+    return calculation(b, c);
   }
   return a;
 };
 
-const gcd = () => {
-  const gcdGameInfo = 'Find the greatest common divisor of given numbers.';
-  const gcdAim = () => {
-    const a = getRandomInRange();
-    const b = getRandomInRange();
-    const result = nod(a, b);
-    const question = `${a} ${b}`;
-    const answer = `${result}`;
-    return [question, answer];
-  };
-  engine(gcdGameInfo, gcdAim);
+const generateRound = () => {
+  const a = getRandomInRange(0, 100);
+  const b = getRandomInRange(0, 100);
+  const answer = calculation(a, b);
+  const question = `${a} ${b}`;
+  return [question, String(answer)];
 };
 
-export default gcd;
+export default () => {
+  const rules = 'Find the greatest common divisor of given numbers.';
+  runEngine(rules, generateRound);
+};
