@@ -17,31 +17,31 @@ To install the game you need to
 
 - run the command "npm link"
 
-# "Even Game"
+# Even Game
 
 You are shown a random integer number and you need to answer "yes" if the number is even, otherwise answer "no".
 
 [![asciicast](https://asciinema.org/a/oWAgngBinOvZyJRFUMmHK3wRC.svg)](https://asciinema.org/a/oWAgngBinOvZyJRFUMmHK3wRC)
 
-# "Calc Game"
+# Calc Game
 
 You are shown a random simple math expression. You need to calculate it and type the correct answer.
 
 [![asciicast](https://asciinema.org/a/wOkEqvclaxrXauSIXLkjBQ9sU.svg)](https://asciinema.org/a/wOkEqvclaxrXauSIXLkjBQ9sU)
 
-# "Gcd Game"
+# Gcd Game
 
 You are shown two random integer numbers. You need to calculate the greatest common divisor and type the correct answer.
 
 [![asciicast](https://asciinema.org/a/wGxjw3EQ9ejx09ZimWKoGDuWR.svg)](https://asciinema.org/a/wGxjw3EQ9ejx09ZimWKoGDuWR)
 
-# "Progression Game"
+# Progression Game
 
 You are shown a series of numbers that forms an arithmetic progression and еach arithmetic progression is missing one element at the place indicated by the two dots. You need to find the number that is missing in the progression and type the correct answer.
 
 [![asciicast](https://asciinema.org/a/eDOGfpcPvYYKNVTSRk2eHYyrT.svg)](https://asciinema.org/a/eDOGfpcPvYYKNVTSRk2eHYyrT)
 
-# "Prime Game"
+# Prime Game
 
 You are shown a random integer number and you need to answer "yes" if the given number is prime, otherwise answer "no".
 
