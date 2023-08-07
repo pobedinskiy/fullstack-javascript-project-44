@@ -21,11 +21,15 @@ To install the game you need to
 
 You are shown a random integer number and you need to answer "yes" if the number is even, otherwise answer "no".
 
+To run this game, run the command "brain-even".
+
 [![asciicast](https://asciinema.org/a/oWAgngBinOvZyJRFUMmHK3wRC.svg)](https://asciinema.org/a/oWAgngBinOvZyJRFUMmHK3wRC)
 
 # Calc Game
 
 You are shown a random simple math expression. You need to calculate it and type the correct answer.
+
+To run this game, run the command "brain-calc".
 
 [![asciicast](https://asciinema.org/a/wOkEqvclaxrXauSIXLkjBQ9sU.svg)](https://asciinema.org/a/wOkEqvclaxrXauSIXLkjBQ9sU)
 
@@ -33,16 +37,22 @@ You are shown a random simple math expression. You need to calculate it and type
 
 You are shown two random integer numbers. You need to calculate the greatest common divisor and type the correct answer.
 
+To run this game, run the command "brain-gcd".
+
 [![asciicast](https://asciinema.org/a/wGxjw3EQ9ejx09ZimWKoGDuWR.svg)](https://asciinema.org/a/wGxjw3EQ9ejx09ZimWKoGDuWR)
 
 # Progression Game
 
 You are shown a series of numbers that forms an arithmetic progression and еach arithmetic progression is missing one element at the place indicated by the two dots. You need to find the number that is missing in the progression and type the correct answer.
 
+To run this game, run the command "brain-progression".
+
 [![asciicast](https://asciinema.org/a/eDOGfpcPvYYKNVTSRk2eHYyrT.svg)](https://asciinema.org/a/eDOGfpcPvYYKNVTSRk2eHYyrT)
 
 # Prime Game
 
 You are shown a random integer number and you need to answer "yes" if the given number is prime, otherwise answer "no".
+
+To run this game, run the command "brain-prime".
 
 [![asciicast](https://asciinema.org/a/3UbcCgckiLzkYvlSEn3jq6hqO.svg)](https://asciinema.org/a/3UbcCgckiLzkYvlSEn3jq6hqO)
