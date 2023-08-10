@@ -1,22 +1,22 @@
 import getRandomInRange from '../getRandomInRange.js';
 import runEngine from '../index.js';
 
-const calculation = (number) => {
-  if (number > 1) {
-    for (let i = 2; i < number; i += 1) {
-      if (number % i === 0) {
-        return 'no';
+const isPrime = (num) => {
+  if (num > 1) {
+    for (let i = 2; i < num; i += 1) {
+      if (num % i === 0) {
+        return false;
       }
     }
-    return 'yes';
+    return true;
   }
-  return 'no';
+  return false;
 };
 
 const generateRound = () => {
   const number = getRandomInRange(0, 100);
   const question = `${number}`;
-  const answer = calculation(number);
+  const answer = isPrime(number) ? 'yes' : 'no';
   return [question, answer];
 };
 

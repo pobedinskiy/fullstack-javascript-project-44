@@ -1,27 +1,24 @@
 import getRandomInRange from '../getRandomInRange.js';
 import runEngine from '../index.js';
 
-const calculation = (progElemCount, startNumber, interval, missingNumberIndex) => {
-  const array = [];
-  array[0] = startNumber;
-  for (let i = 0; i < progElemCount; i += 1) {
-    if (i !== 0) {
-      array[i] = array[i - 1] + interval;
-    }
+const generateProgression = (start, step, length) => {
+  const progression = [];
+  for (let i = 0; i < length; i += 1) {
+    progression.push(start + step * i);
   }
-  const result = array[missingNumberIndex];
-  array[missingNumberIndex] = '..';
-  const progStr = array.join(' ');
-  return [progStr, result];
+  return progression;
 };
 
 const generateRound = () => {
-  const progElemCount = getRandomInRange(5, 10);
-  const startNumber = getRandomInRange(0, 100);
-  const interval = getRandomInRange(1, 10);
-  const missingNumberIndex = getRandomInRange(1, progElemCount - 1);
-  const [question, answer] = calculation(progElemCount, startNumber, interval, missingNumberIndex);
-  return [question, String(answer)];
+  const start = getRandomInRange(0, 100);
+  const step = getRandomInRange(1, 10);
+  const length = getRandomInRange(5, 10);
+  const progArr = generateProgression(start, step, length);
+  const missingNumberIndex = getRandomInRange(0, length - 1);
+  const answer = String(progArr[missingNumberIndex]);
+  progArr[missingNumberIndex] = '..';
+  const question = progArr.join(' ');
+  return [question, answer];
 };
 
 export default () => {

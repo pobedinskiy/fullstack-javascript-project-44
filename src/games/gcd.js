@@ -1,10 +1,10 @@
 import getRandomInRange from '../getRandomInRange.js';
 import runEngine from '../index.js';
 
-const calculation = (a, b) => {
+const getGcd = (a, b) => {
   if (b !== 0) {
     const c = a % b;
-    return calculation(b, c);
+    return getGcd(b, c);
   }
   return a;
 };
@@ -12,9 +12,9 @@ const calculation = (a, b) => {
 const generateRound = () => {
   const a = getRandomInRange(0, 100);
   const b = getRandomInRange(0, 100);
-  const answer = calculation(a, b);
+  const answer = String(getGcd(a, b));
   const question = `${a} ${b}`;
-  return [question, String(answer)];
+  return [question, answer];
 };
 
 export default () => {

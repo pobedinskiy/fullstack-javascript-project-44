@@ -5,6 +5,7 @@ const getRandomOperator = () => {
   const operators = ['+', '-', '*'];
   return operators[getRandomInRange(0, operators.length - 1)];
 };
+
 const calculation = (num1, num2, operator) => {
   switch (operator) {
     case '+':
@@ -17,6 +18,7 @@ const calculation = (num1, num2, operator) => {
       throw new Error(`Invalid operator - ${operator}`);
   }
 };
+
 const generateRound = () => {
   const num1 = getRandomInRange(0, 100);
   const num2 = getRandomInRange(0, 100);
